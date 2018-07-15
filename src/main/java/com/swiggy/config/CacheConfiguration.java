@@ -39,6 +39,10 @@ public class CacheConfiguration {
             cm.createCache(com.swiggy.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.swiggy.domain.User.class.getName() + ".authorities", jcacheConfiguration);
             cm.createCache(com.swiggy.domain.Slot.class.getName(), jcacheConfiguration);
+            cm.createCache(com.swiggy.domain.Customer.class.getName(), jcacheConfiguration);
+            cm.createCache(com.swiggy.domain.Customer.class.getName() + ".restaurants", jcacheConfiguration);
+            cm.createCache(com.swiggy.domain.Restaurant.class.getName(), jcacheConfiguration);
+            cm.createCache(com.swiggy.domain.Restaurant.class.getName() + ".customers", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

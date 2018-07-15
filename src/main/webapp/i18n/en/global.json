@@ -8,6 +8,8 @@
             "entities": {
                 "main": "Entities",
                 "slot": "Slot",
+                "customer": "Customer",
+                "restaurant": "Restaurant",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
