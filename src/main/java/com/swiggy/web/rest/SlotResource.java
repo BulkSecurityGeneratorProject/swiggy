@@ -3,6 +3,7 @@ package com.swiggy.web.rest;
 import com.codahale.metrics.annotation.Timed;
 import com.swiggy.domain.Slot;
 
+import com.swiggy.domain.enumeration.SlotStatus;
 import com.swiggy.repository.SlotRepository;
 import com.swiggy.web.rest.errors.BadRequestAlertException;
 import com.swiggy.web.rest.util.HeaderUtil;
@@ -100,6 +101,16 @@ public class SlotResource {
     public ResponseEntity<Slot> getSlot(@PathVariable Long id) {
         log.debug("REST request to get Slot : {}", id);
         Slot slot = slotRepository.findOne(id);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(slot));
+    }
+
+    @GetMapping("/slots/{id}/{status}")
+    @Timed
+    public ResponseEntity<Slot> updateSlot(@PathVariable Long id, @PathVariable String status) {
+        log.debug("REST request to get Slot : {}", id);
+        Slot slot = slotRepository.findOne(id);
+        slot.setStatus(SlotStatus.valueOf(status));
+        slotRepository.save(slot);
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(slot));
     }
 
