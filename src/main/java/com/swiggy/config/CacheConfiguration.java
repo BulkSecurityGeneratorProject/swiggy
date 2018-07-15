@@ -38,6 +38,7 @@ public class CacheConfiguration {
             cm.createCache(com.swiggy.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.swiggy.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.swiggy.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.swiggy.domain.Slot.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

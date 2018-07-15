@@ -1,0 +1,16 @@
+entity Customer {
+    name String required
+    lat Double
+    lng Double
+}
+
+entity Restaurant {
+    name String
+    slug String
+    lat Double
+    lng Double
+}
+
+relationship ManyToMany {
+    Customer{restaurant} to Restaurant{customer}
+}

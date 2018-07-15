@@ -1,0 +1,34 @@
+entity Customer {
+    name String required
+    lat Double
+    lng Double
+}
+
+entity Restaurant {
+    name String
+    slug String
+    lat Double
+    lng Double
+}
+
+entity OrderData {
+
+}
+
+entity SlotStatus {
+    OPEN, JOIN
+}
+
+entity Slot {
+    name String
+    status String
+    description String
+}
+
+entity Route {
+
+}
+
+relationship ManyToOne {
+    Customer{name} to OrderData
+}

@@ -1,0 +1,9 @@
+{
+    "circuitApp": {
+        "SlotStatus" : {
+            "null": "",
+            "UNLOCK": "UNLOCK",
+            "JOIN": "JOIN"
+        }
+    }
+}

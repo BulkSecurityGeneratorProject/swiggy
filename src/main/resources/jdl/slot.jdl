@@ -1,0 +1,10 @@
+enum SlotStatus {
+    UNLOCK, JOIN
+}
+
+entity Slot {
+    name String
+    status SlotStatus
+    description String
+    discount Integer
+}

@@ -1,0 +1,38 @@
+
+<div *ngIf="slot">
+    <h2><span jhiTranslate="circuitApp.slot.detail.title">Slot</span> {{slot.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="circuitApp.slot.name">Name</span></dt>
+        <dd>
+            <span>{{slot.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="circuitApp.slot.status">Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'circuitApp.SlotStatus.' + slot.status}}">{{slot.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="circuitApp.slot.description">Description</span></dt>
+        <dd>
+            <span>{{slot.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="circuitApp.slot.discount">Discount</span></dt>
+        <dd>
+            <span>{{slot.discount}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'slot/'+ slot.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
